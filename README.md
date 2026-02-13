@@ -31,14 +31,14 @@ Architecture:
 - `org.example.utils` — utility classes
 
 ---
-#How to Run
-##Option A: Run from IntelliJ
+# How to Run
+## Option A: Run from IntelliJ
 
 Open org.example.EndtermApiApplication
 
 Click ▶ Run
 
-##Option B: Run with Maven
+## Option B: Run with Maven
 
 From the project folder (where pom.xml is located):
 
