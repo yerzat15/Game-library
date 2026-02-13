@@ -1,34 +1,34 @@
 # Game Library REST API (Spring Boot)
 
-The project was transformed from CLI/JDBC into a **Spring Boot REST API** with the following architecture:
+Проект преобразован из CLI/JDBC в **Spring Boot REST API** с архитектурой:
 
-* Controller → Service → Repository → Database
-* JSON requests/responses
-* Global exception handling
-* CRUD endpoints
+- Controller → Service → Repository → Database
+- JSON request/response
+- Global exception handling
+- CRUD endpoints
 
-## Implemented Patterns
+## Реализованные паттерны
 
-* **Singleton**: `patterns.LoggerSingleton`, `utils.DatabaseConnection`
-* **Factory**: `patterns.GameFactory` (creates `DigitalGame` or `PhysicalGame`)
-* **Builder**: `patterns.GameBuilder` (builds a complex `GameBase` object from `GameRequest`)
+- **Singleton**: `patterns.LoggerSingleton`, `utils.DatabaseConnection`
+- **Factory**: `patterns.GameFactory` (создаёт `DigitalGame` или `PhysicalGame`)
+- **Builder**: `patterns.GameBuilder` (собирает сложный объект `GameBase` из `GameRequest`)
 
-## Component Principles
+## Компонентные принципы
 
-* **REP**: reusable modules (service/repository/patterns/utils)
-* **CCP**: classes that change together are grouped into packages
-* **CRP**: controllers depend only on service, service depends on repository
+- **REP**: переиспользуемые модули (service/repository/patterns/utils)
+- **CCP**: классы, изменяющиеся вместе, сгруппированы по пакетам
+- **CRP**: контроллеры зависят только от service, service — от repository
 
-## Technologies
+## Технологии
 
-* Java 17
-* Spring Boot 3
-* Spring Web
-* Spring Data JPA
-* H2 (in-memory, PostgreSQL mode)
-* Jakarta Validation
+- Java 17
+- Spring Boot 3
+- Spring Web
+- Spring Data JPA
+- H2 (in-memory, PostgreSQL mode)
+- Jakarta Validation
 
-## Structure
+## Структура
 
 ```text
 src/main/java/
@@ -45,7 +45,7 @@ src/main/java/
 └── Main.java
 ```
 
-## Run
+## Запуск
 
 ```bash
 mvn spring-boot:run
@@ -54,13 +54,11 @@ mvn spring-boot:run
 ## REST API
 
 ### Genres
+- `GET /api/genres`
+- `GET /api/genres/{id}`
+- `POST /api/genres`
 
-* `GET /api/genres`
-* `GET /api/genres/{id}`
-* `POST /api/genres`
-
-Example:
-
+Пример:
 ```json
 {
   "name": "RPG",
@@ -69,13 +67,11 @@ Example:
 ```
 
 ### Developers
+- `GET /api/developers`
+- `GET /api/developers/{id}`
+- `POST /api/developers`
 
-* `GET /api/developers`
-* `GET /api/developers/{id}`
-* `POST /api/developers`
-
-Example:
-
+Пример:
 ```json
 {
   "name": "CD Projekt RED",
@@ -85,15 +81,13 @@ Example:
 ```
 
 ### Games
+- `GET /api/games`
+- `GET /api/games/{id}`
+- `POST /api/games`
+- `PUT /api/games/{id}`
+- `DELETE /api/games/{id}`
 
-* `GET /api/games`
-* `GET /api/games/{id}`
-* `POST /api/games`
-* `PUT /api/games/{id}`
-* `DELETE /api/games/{id}`
-
-#### Digital Game (DIGITAL)
-
+#### DIGITAL game
 ```json
 {
   "type": "DIGITAL",
@@ -108,8 +102,7 @@ Example:
 }
 ```
 
-#### Physical Game (PHYSICAL)
-
+#### PHYSICAL game
 ```json
 {
   "type": "PHYSICAL",
