@@ -1,34 +1,34 @@
 # Game Library REST API (Spring Boot)
 
-Проект преобразован из CLI/JDBC в **Spring Boot REST API** с архитектурой:
+The project was transformed from CLI/JDBC into a **Spring Boot REST API** with the following architecture:
 
 * Controller → Service → Repository → Database
-* JSON запросы/ответы
-* Глобальная обработка ошибок
+* JSON requests/responses
+* Global exception handling
 * CRUD endpoints
 
-## Реализованные паттерны
+## Implemented Patterns
 
 * **Singleton**: `patterns.LoggerSingleton`, `utils.DatabaseConnection`
-* **Factory**: `patterns.GameFactory` (создаёт `DigitalGame` или `PhysicalGame`)
-* **Builder**: `patterns.GameBuilder` (собирает сложный объект `GameBase` из `GameRequest`)
+* **Factory**: `patterns.GameFactory` (creates `DigitalGame` or `PhysicalGame`)
+* **Builder**: `patterns.GameBuilder` (builds a complex `GameBase` object from `GameRequest`)
 
-## Компонентные принципы
+## Component Principles
 
-* **REP**: переиспользуемые модули (service/repository/patterns/utils)
-* **CCP**: классы, изменяющиеся вместе, сгруппированы по пакетам
-* **CRP**: контроллеры зависят только от service, service — от repository
+* **REP**: reusable modules (service/repository/patterns/utils)
+* **CCP**: classes that change together are grouped into packages
+* **CRP**: controllers depend only on service, service depends on repository
 
-## Технологии
+## Technologies
 
 * Java 17
 * Spring Boot 3
 * Spring Web
 * Spring Data JPA
-* H2 (in-memory, режим PostgreSQL)
+* H2 (in-memory, PostgreSQL mode)
 * Jakarta Validation
 
-## Структура
+## Structure
 
 ```text
 src/main/java/
@@ -45,7 +45,7 @@ src/main/java/
 └── Main.java
 ```
 
-## Запуск
+## Run
 
 ```bash
 mvn spring-boot:run
@@ -53,28 +53,28 @@ mvn spring-boot:run
 
 ## REST API
 
-### Жанры (Genres)
+### Genres
 
 * `GET /api/genres`
 * `GET /api/genres/{id}`
 * `POST /api/genres`
 
-Пример:
+Example:
 
 ```json
 {
   "name": "RPG",
-  "description": "Ролевые игры"
+  "description": "Role-playing games"
 }
 ```
 
-### Разработчики (Developers)
+### Developers
 
 * `GET /api/developers`
 * `GET /api/developers/{id}`
 * `POST /api/developers`
 
-Пример:
+Example:
 
 ```json
 {
@@ -84,7 +84,7 @@ mvn spring-boot:run
 }
 ```
 
-### Игры (Games)
+### Games
 
 * `GET /api/games`
 * `GET /api/games/{id}`
@@ -92,7 +92,7 @@ mvn spring-boot:run
 * `PUT /api/games/{id}`
 * `DELETE /api/games/{id}`
 
-#### Цифровая игра (DIGITAL)
+#### Digital Game (DIGITAL)
 
 ```json
 {
@@ -108,7 +108,7 @@ mvn spring-boot:run
 }
 ```
 
-#### Физическая игра (PHYSICAL)
+#### Physical Game (PHYSICAL)
 
 ```json
 {
