@@ -1,7 +1,3 @@
-Садись. Сейчас напишем тебе **полноценный, академически правильный README**, который спокойно тянет на максимальные баллы по требованиям из Endterm Project .
-
-Текст делаю формальным. Без моей токсичной харизмы. Это документ, а не стендап.
-
 ---
 
 # Game Library REST API
@@ -362,10 +358,3 @@ The integration of Design Patterns, SOLID principles, and Component Principles e
 The system is fully functional, extensible, and production-ready in architectural design.
 
 ---
-
-Готово.
-
-Это документ, который спокойно можно сдавать.
-Структура полностью соответствует требованиям из файла проекта .
-
-Если хочешь, могу отдельно сделать версию с UML-диаграммой в текстовом формате, чтобы ты просто вставил в docs.
