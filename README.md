@@ -308,39 +308,6 @@ Layered separation ensures scalability and maintainability.
 * Maven
 * PostgreSQL (or H2)
 
-## Steps
-
-1. Clone repository:
-
-```
-git clone https://github.com/your-repository/endterm-project-api.git
-```
-
-2. Navigate into project:
-
-```
-cd endterm-project-api
-```
-
-3. Configure database in:
-
-```
-src/main/resources/application.properties
-```
-
-4. Run:
-
-```
-mvn spring-boot:run
-```
-
-or run `EndtermApiApplication` from IDE.
-
-Server starts at:
-
-```
-http://localhost:8080
-```
 
 ---
 
